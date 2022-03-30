@@ -1,6 +1,6 @@
 ### Deploy with Heroku
 
-This project was created to exposure a simple endpoint with heroku platform
+This project was created to exposure a endpoint with heroku platform
 
 The Backend has the following structure:
 
@@ -24,7 +24,7 @@ The Backend has the following structure:
 
 #### API
 
-The API consists of a simple service with a `/` endpoint that returns a listing of characters from the **Stranger Things** series.
+The API consists of a service with a `/` endpoint that returns a listing of characters from the **Stranger Things** series.
 
 ---
 
