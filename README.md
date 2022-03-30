@@ -1,5 +1,5 @@
 
-### Projeto de Deploy com Heroku
+### Deploy com Heroku
 
 O Backend possui a seguinte estrutura:
 
