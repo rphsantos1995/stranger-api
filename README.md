@@ -10,8 +10,8 @@ The Backend has the following structure:
 ├── date
 │ ├── dataset
 │ │ └── stranger-things-characters.json
-│ └── repository
-│ └── StrangerThings.js
+│ ├── repository
+│   └── StrangerThings.js
 ├── services
 │ └── StrangerThings.js
 ├── package-lock.json
