@@ -1,18 +1,17 @@
+### Deploy with Heroku
 
-### Deploy com Heroku
-
-O Backend possui a seguinte estrutura:
+The Backend has the following structure:
 
 ```
 ├── README.md
 ├── index.js
-├── data
-│  ├── dataset
-│  │  └── stranger-things-characters.json
-│  └── repository
-│     └── StrangerThings.js
+├── date
+│ ├── dataset
+│ │ └── stranger-things-characters.json
+│ └── repository
+│ └── StrangerThings.js
 ├── services
-│  └── StrangerThings.js
+│ └── StrangerThings.js
 ├── package-lock.json
 └── package.json
 └── Dockerfile
@@ -23,21 +22,21 @@ O Backend possui a seguinte estrutura:
 
 #### API
 
-A API consiste em um serviço simples com um endpoint `/` que retorna uma listagem com os personagens da série **Stranger Things**.
+The API consists of a simple service with a `/` endpoint that returns a listing of characters from the **Stranger Things** series.
 
 ---
 
-#### Resposta
+#### Response
 
-A lista de personagem possui os seguintes campos:
+The character list has the following fields:
 
-- **name**: Nome do personagem;
+- **name**: Character name;
 
-- **status**: se o personagem está vivo ou não na série. Os valores possíveis são `alive`, `deceased` ou `unknown`;
+- **status**: if the character is alive or not in the series. Possible values ​​are `alive`, `deceased` or `unknown`;
 
-- **origin**: o local de origem do personagem.
+- **origin**: the character's origin location.
 
-A resposta é em formato `JSON`, e o retorno é sempre um array de objetos. Abaixo, um exemplo:
+The response is in `JSON` format, and the return is always an array of objects. Below an example:
 
 ```JSON
 [
@@ -51,15 +50,15 @@ A resposta é em formato `JSON`, e o retorno é sempre um array de objetos. Abai
 
 ---
 
-#### Filtros
+#### Filters
 
-Todos os campos da estrutura de retorno da resposta podem ser utilizados como filtros. Para isso, basta passar na `query string` o filtro desejado. No exemplo abaixo, estamos filtrando pelo _nome_ do personagem:
+All fields in the response return structure can be used as filters. To do this, just pass the desired filter in the `query string`. In the example below, we are filtering by the character's _name_:
 
 > stranger-names-api.herokuapp.com/?name=el
 
-Os filtros são feitos utilizando uma `regex`, buscando pelo texto passado na `query string` em qualquer parte do campo, sem diferenciar maiúsculas de minúsculas.
+Filters are done using a `regex`, looking for the text passed in the `query string` anywhere in the field, case insensitive.
 
-Nesse caso o retorno seria:
+In this case the return would be:
 
 ```JSON
 [
@@ -76,21 +75,21 @@ Nesse caso o retorno seria:
 ]
 ```
 
-Filtros _page_ e _size_ para ajustar a quantidade de resultados e paginação.
+_page_ and _size_ filters to adjust the amount of results and pagination.
 
 > stranger-names-api.herokuapp.com?page=2&size=30
 
 ---
 
-#### Modo `upside down` (dw) - Backend
+#### `upside down` (dw) mode - Backend
 
-Na API, no arquivo `index.js`, há a seguinte variável de controle:
+In the API, in the `index.js` file, there is the following control variable:
 
 ```javascript
 const hereIsTheUpsideDown = true;
 ```
 
-Caso ela seja `true`, a API ativará o modo "Mundo Invertido", conforme a série, e começará a responder desta forma:
+If it is `true`, the API will activate the "Inverted World" mode, depending on the series, and will start responding like this:
 
 ```JSON
 [
