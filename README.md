@@ -1,5 +1,7 @@
 ### Deploy with Heroku
 
+This project was created to exposure a simple endpoint with heroku platform
+
 The Backend has the following structure:
 
 ```
