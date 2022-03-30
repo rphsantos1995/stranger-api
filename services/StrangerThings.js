@@ -7,8 +7,9 @@ class StrangerThingsService {
     this.repository = repository;
   }
 
-  search({ page, size, ...params }, upsideDownMode) {
-    const characters = this.repository.search(params, { page, size });
+  search({ ...params }, upsideDownMode) {
+
+    const characters = this.repository.search(params);
 
     if (upsideDownMode) {
       return characters.map(({ name, origin, status }) => ({

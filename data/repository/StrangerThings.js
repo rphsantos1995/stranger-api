@@ -1,6 +1,7 @@
 'use strict';
 
-const makeFilterFn = (params = {}) => ({ name, status, origin }) => {
+const makeFilterFn = (params) => ({ name, status, origin }) => {
+
   if (params.name && !RegExp(params.name, 'gi').test(name)) return false;
 
   if (params.origin && !RegExp(params.origin, 'gi').test(origin)) return false;
@@ -15,8 +16,8 @@ class StrangerThingsRepository {
     this.dataset = dataset;
   }
 
-  search(params, pagination) {
-    const { page = 1, size = 10 } = pagination;
+  search(params) {
+    const { page = 1, size = 20 } = params;
 
     const offset = (page - 1) * size;
 
